@@ -1,5 +1,6 @@
 const translations = {
     tw: {
+        demo_btn: "進入平台原型 Demo",
         header_title: "AI EduPlan 平台建置藍圖 (進階細節版)",
         header_desc: "專為人工智慧課程設計，原生支援繁中、印尼、越南，整合國際在地金流的現代化平台。點擊下方流程節點查看深入的技術元件與執行方式。",
         node_1: "平台基礎建設", node_2: "多語系與在地化", node_3: "跨境金流架構", node_4: "AI 助教與影音", node_5: "部署與持續整合",
@@ -10,7 +11,7 @@ const translations = {
         p1_b3_t: "身份驗證 (Auth)", p1_b3_1: "<strong>機制:</strong> JWT 搭配 HttpOnly Cookies 防範 XSS 攻擊。", p1_b3_2: "<strong>OAuth:</strong> 支援 Google, GitHub 快速登入。", p1_b3_3: "<strong>權限控制:</strong> RBAC 分離學生、講師、管理員。",
         p2_title: "02. 全球化多語系策略 (i18n)", p2_desc: "不只是翻譯文字，還包含時區、貨幣符號、與排版的全面在地化。",
         p2_explain: "來自不同國家的學生（台灣、印尼、越南）都能用自己母語的介面與字幕，毫無阻礙地學習。",
-        p2_f1_t: "IP 定位 (GeoIP)", p2_f1_d: "偵測來源國家，自動設定時區與幣別。",
+        p2_f1_t: "IP 定量 (GeoIP)", p2_f1_d: "偵測來源國家，自動設定時區與幣別。",
         p2_f2_t: "載入語系", p2_f2_d: "優先顯示當地語系，無配對則 fallback 英文。",
         p2_f3_t: "動態排版調整", p2_f3_d: "印尼/越南文字串較長，UI 容器動態適應。",
         p2_b1_t: "AI 自動化翻譯工作流", p2_b1_1: "原始內容撰寫以 <strong>繁體中文</strong> 為主。", p2_b1_2: "呼叫 OpenAI API，批次翻譯成印尼文與越南文。", p2_b1_3: "推送至後台，由當地母語人士進行人工校對。",
@@ -29,6 +30,7 @@ const translations = {
         p5_b2_t: "國際化 SEO 策略", p5_b2_1: "<strong>Hreflang Tags:</strong> 標記各語言版本對應關係。", p5_b2_2: "<strong>Schema.org:</strong> 讓 Google 搜尋結果直接顯示評分與課程價格。"
     },
     en: {
+        demo_btn: "Enter Platform Demo",
         header_title: "AI EduPlan Architecture Blueprint",
         header_desc: "A modern platform designed for AI courses, natively supporting traditional Chinese, Indonesian, and Vietnamese with integrated local payment gateways.",
         node_1: "Infrastructure", node_2: "Localization (i18n)", node_3: "Payment Gateways", node_4: "AI & Content Delivery", node_5: "CI/CD & Deployment",
@@ -58,6 +60,7 @@ const translations = {
         p5_b2_t: "International SEO", p5_b2_1: "<strong>Hreflang:</strong> Tag relationships between language versions.", p5_b2_2: "<strong>Schema.org:</strong> Display ratings & prices directly in Google."
     },
     id: {
+        demo_btn: "Masuk ke Prototipe Demo",
         header_title: "AI EduPlan: Cetak Biru Arsitektur",
         header_desc: "Platform modern untuk kursus AI, mendukung bahasa Mandarin, Indonesia, dan Vietnam dengan gateway pembayaran lokal yang terintegrasi.",
         node_1: "Infrastruktur", node_2: "Lokalisasi (i18n)", node_3: "Gateway Pembayaran", node_4: "Asisten AI & Video", node_5: "Penyebaran (CI/CD)",
@@ -78,7 +81,7 @@ const translations = {
         p3_b1_t: "Perutean Gateway", p3_b1_1: "<strong>Taiwan:</strong> ECPay - Kartu Kredit.", p3_b1_2: "<strong>Indonesia/Vietnam:</strong> Xendit - GoPay, MoMo, VA.", p3_b1_3: "<strong>Global:</strong> Stripe API (USD).",
         p3_b2_t: "Status Transaksi", p3_b2_1: "<code>PENDING</code>: Menunggu pembayaran offline.", p3_b2_2: "<code>PAID</code>: Akses kursus dibuka.", p3_b2_3: "<code>FAILED</code>: Kadaluarsa.",
         p4_title: "04. Asisten AI & CDN Video",
-        p4_explain: "Siswa menonton video pembelajaran berkualitas tinggi yang dilindungi hak cipta di sini, dan dapat bertanya kepada asisten AI kapan saja untuk mendapatkan jawaban instan.",
+        p4_explain: "Siswa menonton video pembelajaran berkualitas tinggi yang dilindungi hak cipta di sini, dan dapat bertanya kepada asisten AI saja untuk mendapatkan jawaban instan.",
         p4_b1_t: "Streaming HLS Terenkripsi", p4_b1_1: "<strong>Penyimpanan:</strong> AWS S3 & MediaConvert.", p4_b1_2: "<strong>Keamanan:</strong> Enkripsi AES-128 anti-unduh.", p4_b1_3: "<strong>CDN:</strong> CloudFront untuk streaming lancar di Asia Tenggara.",
         p4_b2_t: "Asisten RAG AI", p4_b2_1: "<strong>Vector DB:</strong> Menyimpan transkrip video.", p4_b2_2: "<strong>Konteks:</strong> Konteks stempel waktu video otomatis.", p4_b2_3: "<strong>Multi-bahasa:</strong> Terjemahan otomatis ke DB Mandarin.",
         p5_title: "05. CI/CD & Pemasaran",
@@ -87,6 +90,7 @@ const translations = {
         p5_b2_t: "SEO Internasional", p5_b2_1: "<strong>Hreflang:</strong> Hubungan antar versi bahasa.", p5_b2_2: "<strong>Schema.org:</strong> Cuplikan kaya di Google."
     },
     vn: {
+        demo_btn: "Truy cập Demo Nguyên mẫu",
         header_title: "Bản vẽ Kiến trúc AI EduPlan",
         header_desc: "Nền tảng hiện đại dành cho các khóa học AI, hỗ trợ tiếng Trung, tiếng Indonesia và tiếng Việt với cổng thanh toán địa phương.",
         node_1: "Cơ sở hạ tầng", node_2: "Bản địa hóa (i18n)", node_3: "Cổng thanh toán", node_4: "Trợ lý AI & Video", node_5: "Triển khai (CI/CD)",
@@ -111,7 +115,7 @@ const translations = {
         p4_b1_t: "Truyền phát HLS được mã hóa", p4_b1_1: "<strong>Lưu trữ:</strong> AWS S3 & MediaConvert.", p4_b1_2: "<strong>Bảo mật:</strong> Mã hóa AES-128 chống tải xuống.", p4_b1_3: "<strong>CDN:</strong> CloudFront cho Đông Nam Á.",
         p4_b2_t: "Trợ lý RAG AI", p4_b2_1: "<strong>Vector DB:</strong> Lưu bản ghi video.", p4_b2_2: "<strong>Ngữ cảnh:</strong> Ngữ cảnh thời gian video tự động.", p4_b2_3: "<strong>Đa ngôn ngữ:</strong> Dịch tự động sang DB tiếng Trung.",
         p5_title: "05. Triển khai & Tiếp thị",
-        p5_explain: "Nhà phát triển phát hành các bản cập nhật tại đây chỉ với một cú nhấp chuột. Các trang tiếp thị tĩnh được tự động tải lên GitHub Pages, giúp nền tảng dễ dàng được tìm thấy trên các công cụ tìm kiếm như Google.",
+        p5_explain: "Nhà phát triển phát hành các bản cập nhật tại đây chỉ với một cú nhấp chuột. Các trang tiếp thị tĩnh được tự động tải lên GitHub Pages, giúp nền tảng dễ dàng được tìm thấy trên các công cụ kiếm như Google.",
         p5_b1_t: "GitHub Actions", p5_b1_1: "<strong>Landing Page:</strong> Tự động triển khai lên GH Pages.", p5_b1_2: "<strong>Backend:</strong> PyTest -> Docker -> Cloud.",
         p5_b2_t: "SEO Quốc tế", p5_b2_1: "<strong>Hreflang:</strong> Mối quan hệ giữa các ngôn ngữ.", p5_b2_2: "<strong>Schema.org:</strong> Xếp hạng trực tiếp trên Google."
     }

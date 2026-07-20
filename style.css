@@ -35,11 +35,38 @@ body::before {
   padding: 2rem;
 }
 
-/* ========== LANG SWITCHER ========== */
-.lang-switcher {
+/* ========== TOP NAV CONTROLS ========== */
+.top-nav-controls {
   position: absolute;
   top: 1.5rem;
   right: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 100;
+}
+.demo-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
+  transition: all 0.3s;
+}
+.demo-link-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(108, 92, 231, 0.6);
+}
+
+/* ========== LANG SWITCHER ========== */
+.lang-switcher {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -48,7 +75,6 @@ body::before {
   padding: 0.4rem 0.8rem;
   border-radius: 999px;
   backdrop-filter: blur(10px);
-  z-index: 100;
 }
 .lang-switcher i {
   color: var(--accent3);
@@ -290,6 +316,7 @@ body::before {
 
 /* Responsive */
 @media (max-width: 900px) {
+  .top-nav-controls { position: relative; top: auto; right: auto; margin-bottom: 1rem; justify-content: center; }
   .workflow-nodes { border-radius: 12px; padding: 1rem; width: 100%; overflow-x: auto; justify-content: flex-start; }
   .node { min-width: 100px; padding: 0.6rem 1rem; }
   .grid-2, .grid-3 { grid-template-columns: 1fr; }
