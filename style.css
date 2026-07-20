@@ -204,6 +204,26 @@ body::before {
 .panel-content.scrollable::-webkit-scrollbar-track { background: transparent; }
 .panel-content.scrollable::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
 
+/* ========== EXPLAIN BOX ========== */
+.explain-box {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: rgba(108, 92, 231, 0.1);
+  border: 1px solid rgba(108, 92, 231, 0.3);
+  padding: 0.8rem 1.2rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.5;
+}
+.explain-box i {
+  color: var(--accent2);
+  font-size: 1.1rem;
+}
+
 .badge {
   padding: 0.25rem 0.75rem;
   border-radius: 999px;
