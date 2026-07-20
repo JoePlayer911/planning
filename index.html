@@ -181,23 +181,65 @@
                         <i class="fa-solid fa-circle-info"></i>
                         <span data-i18n="p3_explain">這是開發者／平台擁有者收錢（獲利）的地方。學生可以使用當地的信用卡、電子錢包或轉帳付款。</span>
                     </div>
-                    <p class="desc" data-i18n="p3_desc">針對東南亞市場，深度整合當地虛擬帳號與電子錢包。</p>
+                    
                     <div class="grid-2">
-                        <div class="box">
-                            <h4><i class="fa-solid fa-money-bill-transfer"></i> <span data-i18n="p3_b1_t">支付網關動態路由</span></h4>
-                            <ul class="detail-list">
-                                <li data-i18n="p3_b1_1"><strong>台灣:</strong> 綠界 (ECPay) - 信用卡與超商。</li>
-                                <li data-i18n="p3_b1_2"><strong>印尼/越南:</strong> Xendit - GoPay, MoMo 或虛擬帳號。</li>
-                                <li data-i18n="p3_b1_3"><strong>國際:</strong> Stripe API，以 USD 計價。</li>
-                            </ul>
+                        <div>
+                            <p class="desc" data-i18n="p3_desc">針對東南亞市場，深度整合當地虛擬帳號與電子錢包。</p>
+                            <div class="box">
+                                <h4><i class="fa-solid fa-money-bill-transfer"></i> <span data-i18n="p3_b1_t">支付網關動態路由</span></h4>
+                                <ul class="detail-list">
+                                    <li data-i18n="p3_b1_1"><strong>台灣:</strong> 綠界 (ECPay) - 信用卡與超商。</li>
+                                    <li data-i18n="p3_b1_2"><strong>印尼/越南:</strong> Xendit - GoPay, MoMo 或虛擬帳號。</li>
+                                    <li data-i18n="p3_b1_3"><strong>國際:</strong> Stripe API，以 USD 計價。</li>
+                                </ul>
+                            </div>
+                            <div class="box mt-3">
+                                <h4><i class="fa-solid fa-rotate"></i> <span data-i18n="p3_b2_t">交易狀態機 (Webhook)</span></h4>
+                                <ul class="detail-list">
+                                    <li data-i18n="p3_b2_1"><code>PENDING</code>: 等待非同步付款。</li>
+                                    <li data-i18n="p3_b2_2"><code>PAID</code>: 收到 Gateway Webhook，解鎖課程。</li>
+                                    <li data-i18n="p3_b2_3"><code>FAILED</code>: 超時未付款，釋放名額。</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="box">
-                            <h4><i class="fa-solid fa-rotate"></i> <span data-i18n="p3_b2_t">交易狀態機 (Webhook)</span></h4>
-                            <ul class="detail-list">
-                                <li data-i18n="p3_b2_1"><code>PENDING</code>: 等待非同步付款。</li>
-                                <li data-i18n="p3_b2_2"><code>PAID</code>: 收到 Gateway Webhook，解鎖課程。</li>
-                                <li data-i18n="p3_b2_3"><code>FAILED</code>: 超時未付款，釋放名額。</li>
-                            </ul>
+                        
+                        <!-- Interactive Fee & Revenue Calculator -->
+                        <div class="box calculator-box">
+                            <h4 style="color: var(--teal);"><i class="fa-solid fa-calculator"></i> <span data-i18n="calc_title">跨境金流成本與收益估算器</span></h4>
+                            <p style="font-size: 0.75rem; color: var(--text3); margin-bottom: 1rem;" data-i18n="calc_desc">模擬不同市場售價下，扣除平台與支付網關手續費後的淨收益估算。</p>
+                            
+                            <div class="form-group">
+                                <label data-i18n="calc_market">目標市場與售價設定</label>
+                                <select class="form-control" id="calc-region" style="background: rgba(0,0,0,0.4); border-color: rgba(255,255,255,0.1);">
+                                    <option value="tw">台灣 (售價: NT$ 2,980, 綠界手續費: 2.75%)</option>
+                                    <option value="id">印尼 (售價: Rp 1.450.000, Xendit手續費: 3.5%)</option>
+                                    <option value="vn">越南 (售價: 2.350.000 VND, MoMo手續費: 2.5%)</option>
+                                    <option value="en">國際 (售價: $99.00 USD, Stripe手續費: 3.4% + $0.3)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group" style="margin-top: 1rem;">
+                                <label style="display: flex; justify-content: space-between;">
+                                    <span data-i18n="calc_sales">預估每月銷量 (人次)</span>
+                                    <span id="calc-sales-val" style="font-weight: 700; color: var(--accent2);">50</span>
+                                </label>
+                                <input type="range" id="calc-sales-range" min="5" max="500" step="5" value="50" style="width: 100%; accent-color: var(--accent);">
+                            </div>
+
+                            <div style="margin-top: 1.5rem; border-top: 1px dashed rgba(255,255,255,0.08); padding-top: 1rem;">
+                                <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 0.4rem;">
+                                    <span data-i18n="calc_total_rev">月總營業額:</span>
+                                    <span id="calc-total-rev" style="color: white; font-weight: 600;">NT$ 149,000</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 0.4rem; color: var(--rose);">
+                                    <span data-i18n="calc_fees">估算網關手續費:</span>
+                                    <span id="calc-total-fees">- NT$ 4,098</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; font-size: 0.9rem; font-weight: 700; color: var(--teal); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.4rem;">
+                                    <span data-i18n="calc_net_income">淨收益預估:</span>
+                                    <span id="calc-net-income">NT$ 144,902</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

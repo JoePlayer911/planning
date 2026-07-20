@@ -9,9 +9,9 @@ const translations = {
         p1_b1_t: "前端應用層 (Frontend)", p1_b1_1: "<strong>框架:</strong> Next.js 提供 SSR/SSG，確保最高 SEO 權重。", p1_b1_2: "<strong>狀態管理:</strong> Zustand 或 Redux Toolkit。", p1_b1_3: "<strong>UI:</strong> TailwindCSS 結合 Framer Motion 實作平滑動畫。",
         p1_b2_t: "後端微服務 (Backend)", p1_b2_1: "<strong>核心 API:</strong> FastAPI (Python) – 極佳的非同步效能。", p1_b2_2: "<strong>任務佇列:</strong> Celery + RabbitMQ 處理耗時任務。", p1_b2_3: "<strong>資料庫:</strong> PostgreSQL (主資料) + Redis (快取)。",
         p1_b3_t: "身份驗證 (Auth)", p1_b3_1: "<strong>機制:</strong> JWT 搭配 HttpOnly Cookies 防範 XSS 攻擊。", p1_b3_2: "<strong>OAuth:</strong> 支援 Google, GitHub 快速登入。", p1_b3_3: "<strong>權限控制:</strong> RBAC 分離學生、講師、管理員。",
-        p2_title: "02. 全球化多語系策略 (i18n)", p2_desc: "不只是翻譯文字，還包含時區、貨幣符號、與排版的全面在地化。",
+        p2_title: "02. 全球化多語系策略 (i18n)", p2_desc: "不節省語系，還包含時區、貨幣符號、與排版的全面在地化。",
         p2_explain: "來自不同國家的學生（台灣、印尼、越南）都能用自己母語的介面與字幕，毫無阻礙地學習。",
-        p2_f1_t: "IP 定量 (GeoIP)", p2_f1_d: "偵測來源國家，自動設定時區與幣別。",
+        p2_f1_t: "IP 定位 (GeoIP)", p2_f1_d: "偵測來源國家，自動設定時區與幣別。",
         p2_f2_t: "載入語系", p2_f2_d: "優先顯示當地語系，無配對則 fallback 英文。",
         p2_f3_t: "動態排版調整", p2_f3_d: "印尼/越南文字串較長，UI 容器動態適應。",
         p2_b1_t: "AI 自動化翻譯工作流", p2_b1_1: "原始內容撰寫以 <strong>繁體中文</strong> 為主。", p2_b1_2: "呼叫 OpenAI API，批次翻譯成印尼文與越南文。", p2_b1_3: "推送至後台，由當地母語人士進行人工校對。",
@@ -27,7 +27,16 @@ const translations = {
         p5_title: "05. 發布與持續整合 (CI/CD)",
         p5_explain: "開發者在這裡一鍵發布更新。靜態宣傳網頁會自動上傳到 GitHub Pages，讓搜尋引擎（Google）更容易找到這個平台。",
         p5_b1_t: "GitHub Actions 部署", p5_b1_1: "<strong>靜態行銷頁:</strong> 推送至 main 自動佈署至 gh-pages 分支。", p5_b1_2: "<strong>後端服務:</strong> 通過 PyTest 後封裝 Docker 推送雲端。",
-        p5_b2_t: "國際化 SEO 策略", p5_b2_1: "<strong>Hreflang Tags:</strong> 標記各語言版本對應關係。", p5_b2_2: "<strong>Schema.org:</strong> 讓 Google 搜尋結果直接顯示評分與課程價格。"
+        p5_b2_t: "國際化 SEO 策略", p5_b2_1: "<strong>Hreflang Tags:</strong> 標記各語言版本對應關係。", p5_b2_2: "<strong>Schema.org:</strong> 讓 Google 搜尋結果直接顯示評分與課程價格。",
+        
+        // Calculator translations
+        calc_title: "跨境金流成本與收益估算器",
+        calc_desc: "模擬不同市場售價下，扣除平台與支付網關手續費後的淨收益估算。",
+        calc_market: "目標市場與售價設定",
+        calc_sales: "預估每月銷量 (人次)",
+        calc_total_rev: "月總營業額:",
+        calc_fees: "估算網關手續費:",
+        calc_net_income: "淨收益預估:"
     },
     en: {
         demo_btn: "Enter Platform Demo",
@@ -57,7 +66,16 @@ const translations = {
         p5_title: "05. CI/CD & Marketing",
         p5_explain: "Developers publish updates here with a single click. Static marketing pages are automatically uploaded to GitHub Pages, making the platform easily discoverable on search engines like Google.",
         p5_b1_t: "GitHub Actions", p5_b1_1: "<strong>Landing:</strong> Auto-deploy static pages to gh-pages branch.", p5_b1_2: "<strong>Backend:</strong> PyTest -> Docker build -> Push to Cloud.",
-        p5_b2_t: "International SEO", p5_b2_1: "<strong>Hreflang:</strong> Tag relationships between language versions.", p5_b2_2: "<strong>Schema.org:</strong> Display ratings & prices directly in Google."
+        p5_b2_t: "International SEO", p5_b2_1: "<strong>Hreflang:</strong> Tag relationships between language versions.", p5_b2_2: "<strong>Schema.org:</strong> Display ratings & prices directly in Google.",
+        
+        // Calculator translations
+        calc_title: "Payment Gateway Fee Estimator",
+        calc_desc: "Estimate transaction costs and net profit based on local market pricing structures.",
+        calc_market: "Target Market & Local Pricing",
+        calc_sales: "Est. Monthly Sales (Units)",
+        calc_total_rev: "Total Gross Revenue:",
+        calc_fees: "Platform Transaction Fees:",
+        calc_net_income: "Estimated Net Profit:"
     },
     id: {
         demo_btn: "Masuk ke Prototipe Demo",
@@ -87,7 +105,16 @@ const translations = {
         p5_title: "05. CI/CD & Pemasaran",
         p5_explain: "Pengembang menerbitkan pembaruan di sini dengan satu klik. Halaman pemasaran statis diunggah secara otomatis ke GitHub Pages, membuat platform ini mudah ditemukan di mesin pencari seperti Google.",
         p5_b1_t: "Penyebaran GitHub Actions", p5_b1_1: "<strong>Halaman Landing:</strong> Auto-deploy ke GitHub Pages.", p5_b1_2: "<strong>Backend:</strong> PyTest -> Docker -> Cloud.",
-        p5_b2_t: "SEO Internasional", p5_b2_1: "<strong>Hreflang:</strong> Hubungan antar versi bahasa.", p5_b2_2: "<strong>Schema.org:</strong> Cuplikan kaya di Google."
+        p5_b2_t: "SEO Internasional", p5_b2_1: "<strong>Hreflang:</strong> Hubungan antar versi bahasa.", p5_b2_2: "<strong>Schema.org:</strong> Cuplikan kaya di Google.",
+        
+        // Calculator translations
+        calc_title: "Kalkulator Estimasi Pendapatan & Biaya",
+        calc_desc: "Estimasi biaya transaksi gateway pembayaran lokal dan laba bersih platform.",
+        calc_market: "Target Pasar & Struktur Harga",
+        calc_sales: "Estimasi Penjualan Bulanan (Orang)",
+        calc_total_rev: "Total Pendapatan Kotor:",
+        calc_fees: "Estimasi Biaya Transaksi:",
+        calc_net_income: "Estimasi Pendapatan Bersih:"
     },
     vn: {
         demo_btn: "Truy cập Demo Nguyên mẫu",
@@ -115,9 +142,18 @@ const translations = {
         p4_b1_t: "Truyền phát HLS được mã hóa", p4_b1_1: "<strong>Lưu trữ:</strong> AWS S3 & MediaConvert.", p4_b1_2: "<strong>Bảo mật:</strong> Mã hóa AES-128 chống tải xuống.", p4_b1_3: "<strong>CDN:</strong> CloudFront cho Đông Nam Á.",
         p4_b2_t: "Trợ lý RAG AI", p4_b2_1: "<strong>Vector DB:</strong> Lưu bản ghi video.", p4_b2_2: "<strong>Ngữ cảnh:</strong> Ngữ cảnh thời gian video tự động.", p4_b2_3: "<strong>Đa ngôn ngữ:</strong> Dịch tự động sang DB tiếng Trung.",
         p5_title: "05. Triển khai & Tiếp thị",
-        p5_explain: "Nhà phát triển phát hành các bản cập nhật tại đây chỉ với một cú nhấp chuột. Các trang tiếp thị tĩnh được tự động tải lên GitHub Pages, giúp nền tảng dễ dàng được tìm thấy trên các công cụ kiếm như Google.",
+        p5_explain: "Nhà phát triển phát hành các bản cập nhật tại đây chỉ với một cú nhấp chuột. Các trang tiếp thị tĩnh được tự động tải lên GitHub Pages, giúp nền tảng dễ dàng được tìm thấy trên các công cụ tìm kiếm như Google.",
         p5_b1_t: "GitHub Actions", p5_b1_1: "<strong>Landing Page:</strong> Tự động triển khai lên GH Pages.", p5_b1_2: "<strong>Backend:</strong> PyTest -> Docker -> Cloud.",
-        p5_b2_t: "SEO Quốc tế", p5_b2_1: "<strong>Hreflang:</strong> Mối quan hệ giữa các ngôn ngữ.", p5_b2_2: "<strong>Schema.org:</strong> Xếp hạng trực tiếp trên Google."
+        p5_b2_t: "SEO Quốc tế", p5_b2_1: "<strong>Hreflang:</strong> Mối quan hệ giữa các ngôn ngữ.", p5_b2_2: "<strong>Schema.org:</strong> Xếp hạng trực tiếp trên Google.",
+        
+        // Calculator translations
+        calc_title: "Công cụ tính phí & Doanh thu",
+        calc_desc: "Ước tính phí giao dịch và lợi nhuận ròng dựa trên cấu trúc giá của thị trường địa phương.",
+        calc_market: "Thị trường Mục tiêu & Giá nội địa",
+        calc_sales: "Lượng học viên ước tính mỗi tháng",
+        calc_total_rev: "Tổng doanh thu gộp:",
+        calc_fees: "Phí cổng thanh toán ước tính:",
+        calc_net_income: "Lợi nhuận ròng ước tính:"
     }
 };
 
@@ -134,7 +170,10 @@ document.addEventListener('DOMContentLoaded', () => {
             node.classList.add('active');
             const targetId = node.getAttribute('data-target');
             const targetPanel = document.getElementById(targetId);
-            if (targetPanel) targetPanel.classList.add('active');
+            if (targetPanel) {
+                targetPanel.classList.add('active');
+                // Trigger a layout refresh if needed
+            }
         });
     });
 
@@ -149,5 +188,58 @@ document.addEventListener('DOMContentLoaded', () => {
                 el.innerHTML = dict[key];
             }
         });
+        
+        // Re-calculate math with current locale text output format
+        calculateProfit();
     });
+
+    // --- Interactive Calculator Logic ---
+    const calcRegion = document.getElementById('calc-region');
+    const calcSalesRange = document.getElementById('calc-sales-range');
+    const calcSalesVal = document.getElementById('calc-sales-val');
+    const calcTotalRev = document.getElementById('calc-total-rev');
+    const calcTotalFees = document.getElementById('calc-total-fees');
+    const calcNetIncome = document.getElementById('calc-net-income');
+
+    const rates = {
+        tw: { price: 2980, currency: "NT$", feePercent: 0.0275, feeFixed: 0 },
+        id: { price: 1450000, currency: "Rp", feePercent: 0.035, feeFixed: 0 },
+        vn: { price: 2350000, currency: "VND", feePercent: 0.025, feeFixed: 0 },
+        en: { price: 99.00, currency: "$", feePercent: 0.034, feeFixed: 0.3 }
+    };
+
+    function calculateProfit() {
+        if (!calcRegion) return;
+        const region = calcRegion.value;
+        const sales = parseInt(calcSalesRange.value);
+        calcSalesVal.textContent = sales;
+
+        const info = rates[region];
+        const gross = info.price * sales;
+        const fees = (info.price * info.feePercent + info.feeFixed) * sales;
+        const net = gross - fees;
+
+        // Format currencies beautifully
+        const formatNum = (num) => Math.round(num).toLocaleString();
+        
+        if (region === 'en') {
+            calcTotalRev.textContent = `${info.currency} ${formatNum(gross)}`;
+            calcTotalFees.textContent = `- ${info.currency} ${formatNum(fees)}`;
+            calcNetIncome.textContent = `${info.currency} ${formatNum(net)}`;
+        } else if (region === 'vn') {
+            calcTotalRev.textContent = `${formatNum(gross)} ${info.currency}`;
+            calcTotalFees.textContent = `- ${formatNum(fees)} ${info.currency}`;
+            calcNetIncome.textContent = `${formatNum(net)} ${info.currency}`;
+        } else {
+            calcTotalRev.textContent = `${info.currency} ${formatNum(gross)}`;
+            calcTotalFees.textContent = `- ${info.currency} ${formatNum(fees)}`;
+            calcNetIncome.textContent = `${info.currency} ${formatNum(net)}`;
+        }
+    }
+
+    if (calcRegion && calcSalesRange) {
+        calcRegion.addEventListener('change', calculateProfit);
+        calcSalesRange.addEventListener('input', calculateProfit);
+        calculateProfit(); // Init calculation on load
+    }
 });
